@@ -1,52 +1,29 @@
 <template>
-  <div><h1>Signin</h1></div>
-  <br /> <br />
-  <div>
-    <center>
-      <input type="text" placeholder="Email" v-model="emaill"/>
-      <br />
-      <br />
-      <input type="password" placeholder=" Password" v-model="password"/>
-      <br />
-      <br />
-      <button type="Signin" v-on:click="click()">Sign in</button>
-      <br />
-      <br />
-    </center>
-  </div>
-  <br/><br/>
-  <div><center><h3>Don’t have a account? Sign up</h3></center></div>
+  <div >
+    <div class=" Signin ">
+      <h1>Signin</h1>
+    </div>
 
+    <div class=" Signin ">
+      <div></div>
+      <!--:ซ้าย-->
+      <div >
+        <FormLogin />
+      </div>
+      <!--:ขวา-->
+    </div>
+  </div>
 </template>
 
-<script >
-export default {
-  name: "Login",
-  data() {
-    return {
-      emaill: null,
-      password: null,
-    };
-  },
-  methods: {
-    click() {
-      console.warn("values : ", this.emaill, this.password);
-    },
-  },
-};
+<script setup>
+import FormLogin from "../components/FormLogin.vue";
 </script>
 
 <style scoped>
-h1 {
-  color: #FF8222 ;
+.Signin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-input{
-  background: #3C394C;
-  border-radius: 5px;
-  
-}
-button{
-  background: #FF8222 ;
-  border-radius: 5px;
-}
+
 </style>
