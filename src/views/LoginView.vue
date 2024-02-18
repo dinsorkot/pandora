@@ -38,6 +38,15 @@ export default {
 
 <style scoped>
 h1 {
-  color: chocolate;
+  color: #FF8222 ;
+}
+input{
+  background: #3C394C;
+  border-radius: 5px;
+  
+}
+button{
+  background: #FF8222 ;
+  border-radius: 5px;
 }
 </style>
