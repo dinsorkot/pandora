@@ -45,6 +45,7 @@ h3{
 
 .ND .btv{
 position: absolute;
-left: 850px;
+display: flex;
+justify-content: center;
 }
 </style>
