@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="box">
-      <input type="text" placeholder="Username" v-model="username" required /><img
+      <input type="text" placeholder="Username" id="email" v-model="Email" required /><img
         src="./icons/icons8-user-96.png"
         alt=""
         style="width: 30px; height: 30px"
@@ -9,21 +9,21 @@
     </div>
 
     <div class="box top">
-      <input  :type="isVisible ? 'text' : 'password'" v-model="inputvalue" placeholder="Password"/>
+      <input  type="password" id="password" v-model="Password" placeholder="Password"/>
       
 
       <img
         src="./icons/icons8-eye-100.png"
         alt=""
         style="width: 30px; height: 30px"
-        @click="openeye()"
+         @click="toggleShow"
       />
     </div>
 
     <button
       style="color: aliceblue; font-size: 30px"
       type="submit"
-      @click="onSummit('hello')"
+      @click="signinEmail(Email,Password)"
       class="top"
     >
       Sign in
@@ -35,17 +35,16 @@
 <script setup>
 import { ref } from "vue";
 const username = ref();
-const password = ref();
+import { useLoginEmail } from '../stores/loginemail';
+const storeE = useLoginEmail();
 
+const { signinEmail } = storeE;
 const onSummit = () => {
   alert("Login Susces !!!");
 };
 
-
-
-
-
-
+const Email = ref();
+const Password = ref();
 
 function click() {
   console.log("username ", username.value);
