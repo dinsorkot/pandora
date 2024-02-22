@@ -14,7 +14,8 @@ export const useLoginEmail = defineStore('Email', () => {
       const user = userCredential.user
       // ...
       console.log(user.email)
-      router.push('main')
+      alert("Login success")
+      router.push('login')
     })
     .catch((error) => {
       const errorCode = error.code
