@@ -20,7 +20,7 @@ const router = createRouter({
       component: RegisterView
     },
     {
-      path: '/sign_in',
+      path: '/',
       name: 'sign_in',
       component: Sign
     },
