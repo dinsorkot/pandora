@@ -15,7 +15,7 @@ export const useCreateUser = defineStore('counter', () => {
                 createUsername(user.email, password, username, repeat_password)
                 // ...
                 alert("Success")
-                router.push('login')
+                router.push('sign_in')
             })
             .catch((error) => {
                 const errorCode = error.code
