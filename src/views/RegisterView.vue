@@ -26,7 +26,7 @@
     </div>
     <div class="lasttext">
         Already have a account?
-        <a style="color: #FF8222; margin-left: 5px; ;" href="/sign_in">Sign in</a>
+        <RouterLink to="/Sign" style="color: #FF8222; margin-left: 5px; ;" href="/sign_in"> Sign in</RouterLink>
     </div>
 </template>
 
