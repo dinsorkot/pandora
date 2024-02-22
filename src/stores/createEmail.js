@@ -12,8 +12,9 @@ export const useCreateUser = defineStore('counter', () => {
             .then((userCredential) => {
                 // Signed in
                 const user = userCredential.user
-                createUsername(user.email, password, username, repeat_password)
+                createUsername(user.uid,user.email, password, username, repeat_password)
                 // ...
+               
                 alert("Success")
                 router.push('sign_in')
             })
@@ -27,17 +28,22 @@ export const useCreateUser = defineStore('counter', () => {
     }
 
     const createUsername = async (
+        uid,
         usernamed,
         passworded,
         repeat_password,
         emailed
+        
     ) => {
-        await setDoc(doc(db, 'users'), {
+        
+        await setDoc(doc(db, 'User',uid), {
             username: usernamed,
             password: passworded,
             repeat_password: repeat_password,
-            email: emailed,
+            email: emailed
         })
+        console.log(uid)
+        
     }
     return { createUser }
 })

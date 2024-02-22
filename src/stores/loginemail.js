@@ -20,11 +20,9 @@ export const useLoginEmail = defineStore('Email', () => {
     .catch((error) => {
       const errorCode = error.code
       const errorMessage = error.message
+      alert("Login Faild")
       console.log(errorMessage)
-      alertify.error('Email or Password inviad');
-      setTimeout(() => {
-        router.go(0)
-      }, 1000);
+      
     })
 }
 
