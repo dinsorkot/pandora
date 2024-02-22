@@ -21,7 +21,8 @@
         </div>
     </div>
     <div class="buttoncenter1" >
-        <button  class="colorbutton" @click="click_Alert()">Sign up</button>
+        <button  class="colorbutton" 
+        @click="createUser(username,password,repeat_password,email)">Sign up</button>
     </div>
     <div class="lasttext">
         Already have a account?
@@ -31,6 +32,11 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useCreateUser } from '../stores/createEmail'
+
+const storeC = useCreateUser();
+const { createUser } = storeC
+
 const username = ref();
 const password = ref();
 const repeat_password = ref();
@@ -42,8 +48,6 @@ function click_Alert() {
     console.log("repeatpassword = ", repeat_password.value);
     console.log("email = ", email.value);
 }
-
-
 
 </script>
 
