@@ -23,7 +23,7 @@
     <div class="buttoncenter1" >
         <button  class="colorbutton" 
         @click="createUser(username,password,repeat_password,email)"
-        ><RouterLink to="/">Sign up</RouterLink></button>
+        ><RouterLink to="/faceID">Sign up</RouterLink></button>
     </div>
     <div class="lasttext">
         Already have a account?
