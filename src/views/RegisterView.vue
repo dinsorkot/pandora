@@ -22,17 +22,19 @@
     </div>
     <div class="buttoncenter1" >
         <button  class="colorbutton" 
-        @click="createUser(username,password,repeat_password,email)">Sign up</button>
+        @click="createUser(username,password,repeat_password,email)"
+        ><RouterLink to="/faceID">Sign up</RouterLink></button>
     </div>
     <div class="lasttext">
         Already have a account?
-        <a style="color: #FF8222; margin-left: 5px; ;" href="/sign_in">Sign in</a>
+        <RouterLink to="/" style="color: #FF8222; margin-left: 5px; ;"> Sign in</RouterLink>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import { useCreateUser } from '../stores/createEmail'
+import router from '@/router';
 
 const storeC = useCreateUser();
 const { createUser } = storeC

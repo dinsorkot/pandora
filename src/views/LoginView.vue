@@ -13,7 +13,7 @@
 
     <div class="Signin">
       <h4 style="padding-top: 100px">Don’t have a account? </h4>
-      <h3 style="padding :  100px  0px 0px 10px;  " > Sign up</h3>
+      <h3 style="padding :  100px  0px 0px 10px;  " > <RouterLink to="/register">Sign up</RouterLink> </h3>
     </div>
   </div>
 </template>
