@@ -49,52 +49,48 @@ const add_user = () => {
 
 </script>
 
-<style> .textcenter {
-     /*ตัวเเรกเลย*/
-     text-align: center;
-     margin-top: 10%;
-     margin-bottom: 5%;
- }
-
- .boxcenter {
-     /*ตรงfrom*/
-     display: flex;
-     padding: auto;
-     margin: auto;
-     justify-content: center;
-     position: relative;
- }
-
- .boxcenter ::placeholder {
-     font-size: 15px;
-     color: #979797;
-     padding-left: 5%;
-
- }
-
- .boxcenter img {
-     position: absolute;
-     left: 1020px;
-     top: 25px;
- }
-
- .boxcenter input {
-     width: 250px;
-     height: 50px;
-     margin: 15px 0px 0px 0px;
-     padding-left: 10px;
-     border-radius: 10px;
-     background-color: #3C394C;
-     color: #ffffff;
-     border: 0;
- }
-
- .buttoncenter1 {
-     /*ปุ่มกด*/
-     display: flex;
-     justify-content: center;
-     margin: 2%;
- }
+<style> 
+.textcenter {
+    /*ตัวเเรกเลย*/
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.boxcenter {
+    /*ตรงfrom*/
+    display: flex;
+    padding: auto;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+}
+.boxcenter ::placeholder{
+    font-size: 15px;
+    color: #979797;
+    padding-left: 5%;
+   
+}
+.boxcenter img{
+    position: absolute;
+    left: 1020px;
+    top: 25px;
+}
+.boxcenter input{
+    width: 250px;
+    height: 50px;
+    margin: 15px 0px 0px 0px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: #3C394C;
+    color: #ffffff;
+    border: 0;
+}
+.buttoncenter1 {
+    /*ปุ่มกด*/
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+}
 
  .lasttext {
      /*sign in*/

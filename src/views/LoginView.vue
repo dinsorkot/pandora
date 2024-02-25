@@ -23,6 +23,7 @@
 import FaceLogin from "../components/FaceLogin.vue"
 import FormLogin from "../components/FormLogin.vue";
 
+
 import { useLoginEmail } from '../stores/loginemail';
 const storeE = useLoginEmail();
 

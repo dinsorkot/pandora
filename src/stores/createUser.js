@@ -23,7 +23,6 @@ export const useCreateUser = defineStore('sign_in', () => {
                 const user = userCredential.user
                 createUsername(user.uid,new_user.value.username, new_user.value.password, new_user.value.email , new_user.value.faceID)
                 // ...
-               
                 alert("Success")
                 router.push('sign_in')
             })
