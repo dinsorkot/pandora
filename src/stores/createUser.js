@@ -24,7 +24,7 @@ export const useCreateUser = defineStore('sign_in', () => {
                 createUsername(user.uid,new_user.value.username, new_user.value.password, new_user.value.email , new_user.value.faceID)
                 // ...
                 alert("Success")
-                router.push('sign_in')
+                router.push('/')
             })
             .catch((error) => {
                 const errorCode = error.code
@@ -39,16 +39,16 @@ export const useCreateUser = defineStore('sign_in', () => {
         uid,
         usernamed,
         passworded,
+        emailed,
         faceID,
-        emailed
         
     ) => {
         
         await setDoc(doc(db, 'User',uid), {
             username: usernamed,
             password: passworded,
+            email: emailed,
             faceID: faceID,
-            email: emailed
         })
         console.log(uid)
         
