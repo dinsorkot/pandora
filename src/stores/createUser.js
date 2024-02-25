@@ -3,16 +3,25 @@ import { defineStore } from 'pinia'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
 import { db } from '../firebase'
+import { ref } from 'vue'
 
-export const useCreateUser = defineStore('counter', () => {
+export const useCreateUser = defineStore('sign_in', () => {
     const auth = getAuth()
     const router = useRouter()
-    const createUser = (username, password, repeat_password, email) => {
-        createUserWithEmailAndPassword(auth, email, password)
+
+    const new_user = ref({
+        username:"",
+        password:"",
+        email:"",
+        faceID:"",
+    })
+
+    const createUser = () => {
+        createUserWithEmailAndPassword(auth, new_user.value.email, new_user.value.password)
             .then((userCredential) => {
                 // Signed in
                 const user = userCredential.user
-                createUsername(user.uid,user.email, password, username, repeat_password)
+                createUsername(user.uid,new_user.value.username, new_user.value.password, new_user.value.email , new_user.value.faceID)
                 // ...
                
                 alert("Success")
@@ -31,7 +40,7 @@ export const useCreateUser = defineStore('counter', () => {
         uid,
         usernamed,
         passworded,
-        repeat_password,
+        faceID,
         emailed
         
     ) => {
@@ -39,11 +48,11 @@ export const useCreateUser = defineStore('counter', () => {
         await setDoc(doc(db, 'User',uid), {
             username: usernamed,
             password: passworded,
-            repeat_password: repeat_password,
+            faceID: faceID,
             email: emailed
         })
         console.log(uid)
         
     }
-    return { createUser }
+    return { createUser , new_user}
 })
