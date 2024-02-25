@@ -88,7 +88,7 @@ function click_Alert() {
     border: 0;
 }
 .buttoncenter1 {
-    /*ปุ่มกด*/
+    /*ปุ่มกดด*/
     display: flex;
     justify-content: center;
     margin: 2%;
