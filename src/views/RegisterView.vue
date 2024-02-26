@@ -65,7 +65,7 @@ const add_user = () => {
     sign_in.new_user.email = user.value.email;
     console.log(sign_in.new_user);
 
-    router.push('/faceID')
+    router.push('/R-faceID')
 };
 </script>
 

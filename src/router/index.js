@@ -2,8 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import Sign from '../views/LoginView.vue'
-import FaceId from "../views/RegisterFaceIdView.vue"
+import R_faceId from "../views/RegisterFaceIdView.vue"
 import Post from "../views/PostView.vue"
+import L_faceId from "../views/LoginFaceIdView.vue"
 
 
 const router = createRouter({
@@ -28,14 +29,19 @@ const router = createRouter({
       component: Sign
     },
     {
-      path: '/faceID',
-      name: 'faceID',
-      component: FaceId
+      path: '/R-faceID',
+      name: 'R-faceID',
+      component: R_faceId
     },
     {
       path: '/post',
       name: 'post',
       component: Post
+    },
+    {
+      path: '/L-faceId',
+      name: 'L-faceId',
+      component: L_faceId
     },
   ]
 })
