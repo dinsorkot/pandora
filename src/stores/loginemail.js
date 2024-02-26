@@ -1,6 +1,7 @@
 import { useRouter } from 'vue-router'
 import { defineStore } from 'pinia'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import Swal from 'sweetalert2'
 
 export const useLoginEmail = defineStore('Email', () => {
   const router = useRouter()
@@ -14,13 +15,31 @@ export const useLoginEmail = defineStore('Email', () => {
       const user = userCredential.user
       // ...
       console.log(user.email)
-      alert("Login success")
-      router.push('sign_in')
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Signed in successfully   " + user.email
+      });
+      router.push('dashboard')
     })
     .catch((error) => {
       const errorCode = error.code
       const errorMessage = error.message
-      alert("Login Faild")
+      Swal.fire({
+        icon: "error",
+        text: "มีบางอย่างผิดพลาด",
+        footer: 'คุณยังไม่มีบัญชีใช่ไหม ?? สามารถกดตรงนี้ได้เลย <a href="/register">สมัครบัญชี</a>'
+      });
       console.log(errorMessage)
       
     })
