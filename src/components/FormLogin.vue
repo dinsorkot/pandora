@@ -9,14 +9,14 @@
     </div>
 
     <div class="box top">
-      <input type="password" id="password" v-model="Password" placeholder="Password"/>
+      <input  type="password" id="password" v-model="Password" placeholder="Password"/>
       
 
       <img
         src="./icons/icons8-eye-100.png"
         alt=""
         style="width: 30px; height: 30px"
-         @click="togglePasswordVisibility(Password);"
+         @click="toggleShow"
       />
   
     </div>
@@ -24,7 +24,7 @@
     <button
       style="color: aliceblue; font-size: 30px"
       type="submit"
-      @click="signinEmail(Email,Password)"
+      @click="signinEmail(Email, Password)"
       class="top"
     >
       Sign in
@@ -35,16 +35,20 @@
 
 <script setup>
 import { ref } from "vue";
-
+const username = ref();
 import { useLoginEmail } from '../stores/loginemail';
 const storeE = useLoginEmail();
+
 const { signinEmail } = storeE;
 
 
 const Email = ref();
 const Password = ref();
 
-
+function click() {
+  console.log("username ", username.value);
+  console.log("password ", password.value);
+}
 </script>
 
 <style scoped>
