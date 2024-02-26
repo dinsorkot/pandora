@@ -1,8 +1,6 @@
 <script setup>
-import { ref , onMounted } from 'vue';
-import { useCreateUser } from '@/stores/createUser'
-
-const sign_in = useCreateUser()
+import { ref, onMounted } from 'vue';
+import Swal from 'sweetalert2'
 const canvas = ref(null);
 const video = ref(null);
 const ctx = ref(null);
@@ -41,7 +39,7 @@ const draw = () => {
 const takePicture = async () => {
     // Convert canvas image to base64
     const imageDataURL = canvas.value.toDataURL('image/jpeg');
-    sign_in.new_user.faceID = imageDataURL;
+    console.log(imageDataURL);
     const apiKey = 'acc_2e937fa34f76b76';
     const apiSecret = 'cbe4fac324cd45b6c9296b33e2f789b5';
 
@@ -59,7 +57,13 @@ const takePicture = async () => {
 
         if (response.ok) {
             const data = await response.json();
-            sign_in.createUser();
+            Swal.fire({
+                icon: "success",
+                title: "HEllO MR. dinsorkot",
+                showConfirmButton: false,
+                timer: 1000
+            });
+            router.push('/')
             console.log(data);
         } else {
             console.log('Error:', response.statusText);

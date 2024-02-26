@@ -49,7 +49,7 @@ const takePicture = async () => {
     formData.append('image', dataURLtoBlob(imageDataURL), 'snapshot.jpg');
 
     try {
-        const response = await fetch('https://api.imagga.com/v2/faces/detections/face_id='+'1', {
+        const response = await fetch('https://api.imagga.com/v2/faces/detections', {
             method: 'POST',
             headers: {
                 Authorization: 'Basic ' + btoa(apiKey + ':' + apiSecret),

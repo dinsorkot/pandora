@@ -18,9 +18,9 @@
         </div>
     </div>
     <div class="buttoncenter1">
-            <button class="colorbutton" @click="add_user">
-                Next step
-            </button>
+        <button class="colorbutton" @click="add_user">
+            Next step
+        </button>
     </div>
     <div class="lasttext">
         Already have a account?
@@ -29,6 +29,7 @@
 </template>
 
 <script setup>
+import Swal from 'sweetalert2'
 import { ref } from 'vue';
 import { useCreateUser } from '@/stores/createUser';
 import router from '@/router';
@@ -46,7 +47,11 @@ const add_user = () => {
     // Validation checks
     if (!user.value.username || !user.value.password || !user.value.repeat_password || !user.value.email) {
         // Alert or handle the error in a way that suits your application
-        alert("Please fill in all fields");
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Please fill in all fields"
+        });
         console.error("Please fill in all fields");
         return;
     }
@@ -136,5 +141,6 @@ const add_user = () => {
  .icons {
      width: 30px;
      height: 30px;
- }</style>
+ }
+</style>
 @/stores/createUser
