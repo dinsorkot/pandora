@@ -9,20 +9,16 @@
     </div>
 
     <div class="box top">
-      <input
-        type="password"
-        id="password"
-        v-model="Password"
-        placeholder="Password"
-        required
-      />
+      <input  type="password" id="password" v-model="Password" placeholder="Password"/>
+      
 
       <img
         src="./icons/icons8-eye-100.png"
         alt=""
         style="width: 30px; height: 30px"
-        @click="toggleShow"
+         @click="toggleShow"
       />
+  
     </div>
 
     <button
@@ -39,22 +35,16 @@
 
 <script setup>
 import { ref } from "vue";
-
-import { useLoginEmail } from "../stores/loginemail";
 const username = ref();
+import { useLoginEmail } from '../stores/loginemail';
 const storeE = useLoginEmail();
-const loading = ref(false);
+
 const { signinEmail } = storeE;
-const onSummit = () => {
-  alert("Login Susces !!!");
-};
+
 
 const Email = ref();
 const Password = ref();
 
-const clearError = () => {
-  authError.value = "";
-};
 function click() {
   console.log("username ", username.value);
   console.log("password ", password.value);
