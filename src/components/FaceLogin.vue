@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="SJM">
-      <div class="SJM EIEI">
+    <div class="SJM" >
+      <div class="SJM EIEI" @click="router.push('/L-faceId')">
         <img src="./icons/icons8-face-id-100.png" alt="" class="SJM" />
       </div>
     </div>
@@ -9,7 +9,11 @@
   </div>
 </template>
 
-<script></script>
+<script setup>
+import router from '@/router';
+
+
+</script>
 
 <style scoped>
 .SJM {

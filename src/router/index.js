@@ -3,7 +3,6 @@ import LoginView from '@/views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import Sign from '../views/LoginView.vue'
 import FaceId from "../views/RegisterFaceIdView.vue"
-import dashboard from "../views/Dashboard.vue"
 
 
 const router = createRouter({
@@ -31,10 +30,6 @@ const router = createRouter({
       path: '/faceID',
       name: 'faceID',
       component: FaceId
-    },{
-      path: '/dashboard',
-      name: 'dashboard',
-      component: dashboard
     },
   ]
 })

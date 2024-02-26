@@ -4,7 +4,6 @@ import Camera from '../components/camera.vue'
 
 <template>
     <div>
-    asdf
         <Camera />
     </div>
 </template>
